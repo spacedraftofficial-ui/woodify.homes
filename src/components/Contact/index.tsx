@@ -27,13 +27,13 @@ export const Contact: React.FC = () => {
 
   const handleWhatsAppChat = () => {
     const message = encodeURIComponent("Hello Woodify Homes. I would like to book a free consultation for my residence.");
-    window.open(`https://wa.me/919876543210?text=${message}`, '_blank');
+    window.open(`https://wa.me/919042863983?text=${message}`, '_blank');
   };
 
   return (
     <section id="contact" className="py-24 md:py-32 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        
+
         {/* Section Title */}
         <div className="max-w-3xl mb-20">
           <motion.p
@@ -56,10 +56,10 @@ export const Contact: React.FC = () => {
 
         {/* Contact Split Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
-          
+
           {/* Left: Contact Info & Map */}
           <div className="lg:col-span-5 space-y-12">
-            
+
             {/* Info cards */}
             <div className="space-y-6">
               <div className="flex gap-4">
@@ -69,7 +69,7 @@ export const Contact: React.FC = () => {
                 <div>
                   <h4 className="font-playfair text-sm font-bold text-woodify-text">Phone Enquiry</h4>
                   <p className="font-inter text-xs text-woodify-text/70 mt-1 hover:text-woodify-burgundy transition-colors">
-                    <a href="tel:+919876543210">+91 98765 43210</a>
+                    <a href="tel:+919042863983">+91 90428 63983</a>
                   </p>
                   <p className="font-inter text-xs text-woodify-text/70">
                     <a href="tel:+918023456789">+91 (80) 2345 6789</a>
@@ -152,7 +152,7 @@ export const Contact: React.FC = () => {
 
           {/* Right: Premium Form Container */}
           <div className="lg:col-span-7 bg-woodify-bg p-8 sm:p-12 rounded-3xl border border-woodify-text/5 relative">
-            
+
             {/* Form submission toast overlay */}
             <AnimatePresence>
               {isSubmitSuccessful && (
@@ -174,7 +174,7 @@ export const Contact: React.FC = () => {
             </AnimatePresence>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {/* Name */}
                 <div>
@@ -186,9 +186,8 @@ export const Contact: React.FC = () => {
                     type="text"
                     {...register("name", { required: "Name is required" })}
                     placeholder="E.g., Vikram Sen"
-                    className={`w-full bg-white font-inter text-xs rounded-xl px-4 py-3 border focus:outline-none transition-all ${
-                      errors.name ? 'border-red-500' : 'border-woodify-text/10 focus:border-woodify-burgundy'
-                    }`}
+                    className={`w-full bg-white font-inter text-xs rounded-xl px-4 py-3 border focus:outline-none transition-all ${errors.name ? 'border-red-500' : 'border-woodify-text/10 focus:border-woodify-burgundy'
+                      }`}
                   />
                   {errors.name && <span className="text-[10px] text-red-500 mt-1 block">{errors.name.message}</span>}
                 </div>
@@ -201,14 +200,13 @@ export const Contact: React.FC = () => {
                   <input
                     id="form-email"
                     type="email"
-                    {...register("email", { 
-                      required: "Email is required", 
-                      pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Invalid email address" } 
+                    {...register("email", {
+                      required: "Email is required",
+                      pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Invalid email address" }
                     })}
                     placeholder="E.g., vikram@outlook.com"
-                    className={`w-full bg-white font-inter text-xs rounded-xl px-4 py-3 border focus:outline-none transition-all ${
-                      errors.email ? 'border-red-500' : 'border-woodify-text/10 focus:border-woodify-burgundy'
-                    }`}
+                    className={`w-full bg-white font-inter text-xs rounded-xl px-4 py-3 border focus:outline-none transition-all ${errors.email ? 'border-red-500' : 'border-woodify-text/10 focus:border-woodify-burgundy'
+                      }`}
                   />
                   {errors.email && <span className="text-[10px] text-red-500 mt-1 block">{errors.email.message}</span>}
                 </div>
@@ -223,14 +221,13 @@ export const Contact: React.FC = () => {
                   <input
                     id="form-phone"
                     type="tel"
-                    {...register("phone", { 
+                    {...register("phone", {
                       required: "Phone number is required",
                       pattern: { value: /^[0-9+() -]+$/, message: "Invalid phone number" }
                     })}
                     placeholder="E.g., +91 98765 43210"
-                    className={`w-full bg-white font-inter text-xs rounded-xl px-4 py-3 border focus:outline-none transition-all ${
-                      errors.phone ? 'border-red-500' : 'border-woodify-text/10 focus:border-woodify-burgundy'
-                    }`}
+                    className={`w-full bg-white font-inter text-xs rounded-xl px-4 py-3 border focus:outline-none transition-all ${errors.phone ? 'border-red-500' : 'border-woodify-text/10 focus:border-woodify-burgundy'
+                      }`}
                   />
                   {errors.phone && <span className="text-[10px] text-red-500 mt-1 block">{errors.phone.message}</span>}
                 </div>
@@ -264,9 +261,8 @@ export const Contact: React.FC = () => {
                   {...register("message", { required: "Message details are required" })}
                   rows={5}
                   placeholder="Share a brief overview of your home (e.g., BHK size, floorplan layout, possession date, custom carpentry goals)..."
-                  className={`w-full bg-white font-inter text-xs rounded-xl px-4 py-3 border focus:outline-none transition-all resize-none ${
-                    errors.message ? 'border-red-500' : 'border-woodify-text/10 focus:border-woodify-burgundy'
-                  }`}
+                  className={`w-full bg-white font-inter text-xs rounded-xl px-4 py-3 border focus:outline-none transition-all resize-none ${errors.message ? 'border-red-500' : 'border-woodify-text/10 focus:border-woodify-burgundy'
+                    }`}
                 />
                 {errors.message && <span className="text-[10px] text-red-500 mt-1 block">{errors.message.message}</span>}
               </div>
