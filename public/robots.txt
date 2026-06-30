@@ -1,0 +1,5 @@
+# robots.txt for Woodify Homes
+User-agent: *
+Allow: /
+
+Sitemap: https://woodifyhomes.com/sitemap.xml

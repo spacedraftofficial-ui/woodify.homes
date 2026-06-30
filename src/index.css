@@ -1,0 +1,103 @@
+/* Swiper.js Styles */
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+/* LightGallery Styles */
+@import 'lightgallery/css/lightgallery.css';
+@import 'lightgallery/css/lg-zoom.css';
+@import 'lightgallery/css/lg-thumbnail.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #F8F6F2;
+    color: #1B1B1B;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F6F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #5C2432;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D64B34;
+}
+
+/* Custom Utilities */
+.glass-nav {
+  background: rgba(248, 246, 242, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(27, 27, 27, 0.05);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(27, 27, 27, 0.03);
+}
+
+.luxury-text-gradient {
+  background: linear-gradient(135deg, #5C2432 0%, #D64B34 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Page loading transition styles */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Overriding default React app wrapper constraints from Vite template */
+#root {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+/* Swiper custom styling to match luxury color theme */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #5C2432 !important;
+  background: rgba(255, 255, 255, 0.85);
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+.swiper-pagination-bullet-active {
+  background: #5C2432 !important;
+}
