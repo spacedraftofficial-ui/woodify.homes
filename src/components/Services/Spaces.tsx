@@ -71,62 +71,6 @@ const spacesData: SpaceType[] = [
     category: "Children's Room",
     image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
     description: "Playful yet structured spaces featuring built-in bunk beds, smart storage drawers, and soft organic colors."
-  },
-  {
-    id: "space-9",
-    name: "Serein Oak Lounge",
-    category: "Living Room",
-    image: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80",
-    description: "A secondary living room focusing on warm timber panels, organic-shaped bouclé sofa, and an open fire pit."
-  },
-  {
-    id: "space-10",
-    name: "Japandi Oak Bedroom",
-    category: "Bedroom",
-    image: "https://images.unsplash.com/photo-1505693395321-883724634266?auto=format&fit=crop&w=800&q=80",
-    description: "Minimalist oak platform bed combined with low hanging brass pendants and tactile woven fabrics."
-  },
-  {
-    id: "space-11",
-    name: "Walnut Culinary Studio",
-    category: "Kitchen",
-    image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
-    description: "Rich dark walnut panels paired with a solid black granite island, integrated premium induction and hidden pantry."
-  },
-  {
-    id: "space-12",
-    name: "Minimalist Travertine Dining",
-    category: "Dining",
-    image: "https://images.unsplash.com/photo-1617806118233-18e1db207f62?auto=format&fit=crop&w=800&q=80",
-    description: "A formal dining room featuring a raw travertine monolithic block table, minimalist steel chairs, and ambient track lights."
-  },
-  {
-    id: "space-13",
-    name: "Anodized Glass Closet",
-    category: "Wardrobe",
-    image: "https://images.unsplash.com/photo-1558882224-cca166733360?auto=format&fit=crop&w=800&q=80",
-    description: "Smoked glass dressing doors framed in dark anodized aluminum, finished with a custom integrated shoe wall."
-  },
-  {
-    id: "space-14",
-    name: "Oak & Linen Office",
-    category: "Home Office",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
-    description: "A serene workspace featuring floating oak bookcases, acoustically treated fabric panels, and concealled cabling."
-  },
-  {
-    id: "space-15",
-    name: "Glass Pivot Villa",
-    category: "Villa",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
-    description: "Double height windows and massive pivoting glass doors merging the living area with an open infinity pool deck."
-  },
-  {
-    id: "space-16",
-    name: "Linen & Oak Kids Suite",
-    category: "Children's Room",
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
-    description: "Multi-functional built-in furniture using white oak, integrated task lighting, and soft linen storage boxes."
   }
 ];
 

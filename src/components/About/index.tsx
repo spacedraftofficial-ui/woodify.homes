@@ -124,10 +124,9 @@ export const About: React.FC = () => {
           </div>
 
           {/* Right Column: Architectural Photography Collage */}
-          <div className="lg:col-span-6 relative mt-16 lg:mt-0 px-4 sm:px-8">
-            {/* Main large image */}
+          <div className="lg:col-span-6 relative mt-8 lg:mt-0">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, x: 30 }}
+              initial={{ opacity: 0, scale: 0.95, x: 50 }}
               whileInView={{ opacity: 1, scale: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
@@ -140,38 +139,6 @@ export const About: React.FC = () => {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-woodify-text/25 via-transparent to-transparent pointer-events-none" />
-            </motion.div>
-
-            {/* Floating Top-Right Overlapping Image */}
-            <motion.div
-              initial={{ opacity: 0, y: -20, x: 20 }}
-              whileInView={{ opacity: 1, y: 0, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute -top-10 -right-4 w-[42%] aspect-[4/3] rounded-xl overflow-hidden shadow-xl border-4 border-white z-10"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=500&q=80"
-                alt="Master bedroom detail"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </motion.div>
-
-            {/* Floating Mid-Right Overlapping Image */}
-            <motion.div
-              initial={{ opacity: 0, y: 20, x: 20 }}
-              whileInView={{ opacity: 1, y: 0, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute bottom-24 -right-8 w-[38%] aspect-[3/4] rounded-xl overflow-hidden shadow-xl border-4 border-white z-10"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=500&q=80"
-                alt="Kitchen materials detail"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
             </motion.div>
 
             {/* Floating Editorial Quote Frame */}
