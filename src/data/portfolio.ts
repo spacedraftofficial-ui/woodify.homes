@@ -114,5 +114,103 @@ export const portfolioData: Project[] = [
     additionalImages: [
       "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80"
     ]
+  },
+  {
+    id: "serein-lounge",
+    title: "The Serein Lounge",
+    location: "Bangalore, India",
+    area: "2,800 sq.ft.",
+    style: "Scandinavian Minimalist",
+    year: 2026,
+    description: "A calming living room focusing on organic shapes, warm textured plaster walls, and custom white boucle furniture surrounding a solid stone hearth.",
+    image: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=1200&q=80",
+    category: "Living Room",
+    additionalImages: [
+      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    id: "oasis-estate",
+    title: "The Oasis Estate",
+    location: "Hyderabad, India",
+    area: "6,200 sq.ft.",
+    style: "Luxury Modern Villa",
+    year: 2026,
+    description: "An open-concept luxury estate merging indoor living with lush landscapes through massive glass pivots and double-height custom concrete ceilings.",
+    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+    category: "Villa",
+    additionalImages: [
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    id: "noir-kitchen",
+    title: "Noir Culinary Studio",
+    location: "Mumbai, India",
+    area: "480 sq.ft.",
+    style: "Modern Editorial Kitchen",
+    year: 2025,
+    description: "A striking kitchen utilizing dark stained wood cabinetry, a massive black quartzite island, and custom brass linear track systems.",
+    image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
+    category: "Kitchen",
+    additionalImages: [
+      "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    id: "japandi-suite",
+    title: "Japandi Master Suite",
+    location: "Pune, India",
+    area: "700 sq.ft.",
+    style: "Oak Wood & Plaster Bedroom",
+    year: 2025,
+    description: "A serene master suite designed with light oak paneling, integrated floating side tables, and sliding shoji-inspired screens.",
+    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+    category: "Bedroom",
+    additionalImages: [
+      "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    id: "oak-linen-workspace",
+    title: "Oak & Linen Workspace",
+    location: "Delhi NCR, India",
+    area: "320 sq.ft.",
+    style: "Minimalist Oak Study",
+    year: 2026,
+    description: "An elegant home office utilizing floating white oak shelving, acoustically treated linen wall panels, and hidden integrated cable routing.",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+    category: "Home Office",
+    additionalImages: [
+      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    id: "travertine-dining",
+    title: "Travertine Dining Hall",
+    location: "Chennai, India",
+    area: "750 sq.ft.",
+    style: "Minimalist Editorial Dining",
+    year: 2025,
+    description: "A dining room centered around a monolithic raw travertine table, custom-molded neutral chairs, and minimalist recessed lighting.",
+    image: "https://images.unsplash.com/photo-1617806118233-18e1db207f62?auto=format&fit=crop&w=1200&q=80",
+    category: "Dining",
+    additionalImages: [
+      "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    id: "glass-dressing",
+    title: "Glass Anodized Dressing Room",
+    location: "Kolkata, India",
+    area: "450 sq.ft.",
+    style: "Modern Glass Closet",
+    year: 2025,
+    description: "Sleek floor-to-ceiling closets using smoked glass doors framed in black anodized metal, complete with integrated custom shoe walls.",
+    image: "https://images.unsplash.com/photo-1558882224-cca166733360?auto=format&fit=crop&w=1200&q=80",
+    category: "Wardrobe",
+    additionalImages: [
+      "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80"
+    ]
   }
 ];
