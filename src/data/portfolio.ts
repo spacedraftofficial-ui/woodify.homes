@@ -71,7 +71,7 @@ export const portfolioData: Project[] = [
   {
     id: "nordic-oasis",
     title: "The Nordic Oasis",
-    location: "Bangalore, India",
+    location: "Adyar, Chennai",
     area: "3,200 sq.ft.",
     style: "Japandi Minimalist",
     year: 2025,
@@ -83,7 +83,7 @@ export const portfolioData: Project[] = [
   {
     id: "terracotta-lounge",
     title: "The Terracotta Lounge",
-    location: "Goa, India",
+    location: "East Coast Road (ECR), Chennai",
     area: "2,800 sq.ft.",
     style: "Modern Mediterranean",
     year: 2025,
@@ -95,7 +95,7 @@ export const portfolioData: Project[] = [
   {
     id: "velvet-salon",
     title: "The Velvet Salon",
-    location: "Mumbai, India",
+    location: "Nungambakkam, Chennai",
     area: "2,100 sq.ft.",
     style: "Parisian Chic Modern",
     year: 2026,
@@ -107,7 +107,7 @@ export const portfolioData: Project[] = [
   {
     id: "concrete-hearth",
     title: "The Concrete Hearth",
-    location: "Pune, India",
+    location: "Anna Nagar, Chennai",
     area: "2,600 sq.ft.",
     style: "Industrial Minimalist",
     year: 2026,
@@ -119,7 +119,7 @@ export const portfolioData: Project[] = [
   {
     id: "serene-sunroom",
     title: "The Serene Sunroom",
-    location: "Kochi, India",
+    location: "Besant Nagar, Chennai",
     area: "2,400 sq.ft.",
     style: "Contemporary Glasshouse",
     year: 2025,
@@ -131,7 +131,7 @@ export const portfolioData: Project[] = [
   {
     id: "minimalist-loft",
     title: "The Minimalist Loft",
-    location: "Ahmedabad, India",
+    location: "Alwarpet, Chennai",
     area: "3,000 sq.ft.",
     style: "Modern Architectural Loft",
     year: 2026,
@@ -145,7 +145,7 @@ export const portfolioData: Project[] = [
   {
     id: "wabi-sabi-sanctuary",
     title: "Wabi-Sabi Bedroom Suite",
-    location: "Pune, India",
+    location: "Anna Nagar, Chennai",
     area: "650 sq.ft.",
     style: "Japanese Minimalist",
     year: 2025,
@@ -157,7 +157,7 @@ export const portfolioData: Project[] = [
   {
     id: "walnut-retreat",
     title: "The Walnut Retreat",
-    location: "Bangalore, India",
+    location: "Adyar, Chennai",
     area: "580 sq.ft.",
     style: "Mid-Century Modern",
     year: 2025,
@@ -169,7 +169,7 @@ export const portfolioData: Project[] = [
   {
     id: "linen-alcove",
     title: "The Linen Alcove",
-    location: "Chennai, India",
+    location: "Mylapore, Chennai",
     area: "520 sq.ft.",
     style: "Scandinavian Minimalist",
     year: 2026,
@@ -181,7 +181,7 @@ export const portfolioData: Project[] = [
   {
     id: "canopy-sanctuary",
     title: "The Canopy Sanctuary",
-    location: "Kochi, India",
+    location: "Besant Nagar, Chennai",
     area: "700 sq.ft.",
     style: "Tropical Modernist",
     year: 2025,
@@ -193,7 +193,7 @@ export const portfolioData: Project[] = [
   {
     id: "minimalist-oasis",
     title: "The Minimalist Oasis",
-    location: "Delhi, India",
+    location: "Boat Club, Chennai",
     area: "600 sq.ft.",
     style: "Contemporary Zen Bedroom",
     year: 2026,
@@ -205,7 +205,7 @@ export const portfolioData: Project[] = [
   {
     id: "modern-boudoir",
     title: "The Modern Boudoir",
-    location: "Mumbai, India",
+    location: "Nungambakkam, Chennai",
     area: "620 sq.ft.",
     style: "Sleek Contemporary Bedroom",
     year: 2025,
@@ -219,7 +219,7 @@ export const portfolioData: Project[] = [
   {
     id: "culinary-atelier",
     title: "The Culinary Atelier",
-    location: "Mumbai, India",
+    location: "Nungambakkam, Chennai",
     area: "450 sq.ft.",
     style: "Editorial Luxury Kitchen",
     year: 2025,
@@ -231,7 +231,7 @@ export const portfolioData: Project[] = [
   {
     id: "alabaster-galley",
     title: "The Alabaster Galley",
-    location: "Hyderabad, India",
+    location: "T. Nagar, Chennai",
     area: "380 sq.ft.",
     style: "Seamless White Minimalist",
     year: 2025,
@@ -243,7 +243,7 @@ export const portfolioData: Project[] = [
   {
     id: "sage-workshop",
     title: "The Sage Workshop",
-    location: "Ooty, India",
+    location: "Valasaravakkam, Chennai",
     area: "400 sq.ft.",
     style: "Modern Country Farmhouse",
     year: 2026,
@@ -255,7 +255,7 @@ export const portfolioData: Project[] = [
   {
     id: "obsidian-island",
     title: "The Obsidian Island",
-    location: "Delhi, India",
+    location: "Boat Club, Chennai",
     area: "480 sq.ft.",
     style: "Luxury Monolithic Dark Kitchen",
     year: 2025,
@@ -267,7 +267,7 @@ export const portfolioData: Project[] = [
   {
     id: "brass-culinary",
     title: "The Brass Culinary Studio",
-    location: "Goa, India",
+    location: "East Coast Road (ECR), Chennai",
     area: "410 sq.ft.",
     style: "Contemporary Warm Kitchen",
     year: 2026,
@@ -279,7 +279,7 @@ export const portfolioData: Project[] = [
   {
     id: "marble-scullery",
     title: "The Marble Scullery",
-    location: "Kolkata, India",
+    location: "Velachery, Chennai",
     area: "460 sq.ft.",
     style: "Editorial Premium Kitchen",
     year: 2025,
@@ -293,7 +293,7 @@ export const portfolioData: Project[] = [
   {
     id: "fluted-dining-hall",
     title: "The Fluted Dining Salon",
-    location: "Chennai, India",
+    location: "Mylapore, Chennai",
     area: "800 sq.ft.",
     style: "Luxury Editorial Dining",
     year: 2025,
@@ -305,7 +305,7 @@ export const portfolioData: Project[] = [
   {
     id: "travertine-hearth",
     title: "The Travertine Hearth",
-    location: "Hyderabad, India",
+    location: "T. Nagar, Chennai",
     area: "650 sq.ft.",
     style: "Minimalist Modern Dining",
     year: 2025,
@@ -317,7 +317,7 @@ export const portfolioData: Project[] = [
   {
     id: "oak-refectory",
     title: "The Oak Refectory",
-    location: "Bangalore, India",
+    location: "Adyar, Chennai",
     area: "550 sq.ft.",
     style: "Rustic Scandinavian Dining",
     year: 2026,
@@ -329,7 +329,7 @@ export const portfolioData: Project[] = [
   {
     id: "marble-banquette",
     title: "The Marble Banquette",
-    location: "Kolkata, India",
+    location: "Velachery, Chennai",
     area: "600 sq.ft.",
     style: "Editorial Contemporary Dining",
     year: 2025,
@@ -341,7 +341,7 @@ export const portfolioData: Project[] = [
   {
     id: "walnut-credenza",
     title: "The Walnut Credenza Studio",
-    location: "Pune, India",
+    location: "Anna Nagar, Chennai",
     area: "580 sq.ft.",
     style: "Mid-Century Modern Dining",
     year: 2026,
@@ -353,7 +353,7 @@ export const portfolioData: Project[] = [
   {
     id: "terrazzo-bistro",
     title: "The Terrazzo Bistro",
-    location: "Mumbai, India",
+    location: "Nungambakkam, Chennai",
     area: "510 sq.ft.",
     style: "Playful Contemporary Dining",
     year: 2025,
@@ -367,7 +367,7 @@ export const portfolioData: Project[] = [
   {
     id: "travertine-dressing",
     title: "The Travertine Wardrobe",
-    location: "Kolkata, India",
+    location: "Velachery, Chennai",
     area: "500 sq.ft.",
     style: "Luxury Walk-in Wardrobe",
     year: 2025,
@@ -379,7 +379,7 @@ export const portfolioData: Project[] = [
   {
     id: "glass-showcase",
     title: "The Glass Showcase",
-    location: "Delhi, India",
+    location: "Boat Club, Chennai",
     area: "550 sq.ft.",
     style: "Italian Minimalist Boutique",
     year: 2025,
@@ -391,7 +391,7 @@ export const portfolioData: Project[] = [
   {
     id: "cedar-armoire",
     title: "The Cedar Armoire",
-    location: "Bangalore, India",
+    location: "Adyar, Chennai",
     area: "420 sq.ft.",
     style: "Warm Timber Luxury Dressing",
     year: 2026,
@@ -403,7 +403,7 @@ export const portfolioData: Project[] = [
   {
     id: "velvet-vanity",
     title: "The Velvet Vanity",
-    location: "Mumbai, India",
+    location: "Nungambakkam, Chennai",
     area: "480 sq.ft.",
     style: "Contemporary Premium Boudoir",
     year: 2025,
@@ -415,7 +415,7 @@ export const portfolioData: Project[] = [
   {
     id: "minimalist-hanger",
     title: "The Minimalist Hanger",
-    location: "Hyderabad, India",
+    location: "T. Nagar, Chennai",
     area: "400 sq.ft.",
     style: "Sleek Open Wardrobe",
     year: 2026,
@@ -427,7 +427,7 @@ export const portfolioData: Project[] = [
   {
     id: "boutique-dressing",
     title: "The Boutique Dressing Room",
-    location: "Chennai, India",
+    location: "Mylapore, Chennai",
     area: "530 sq.ft.",
     style: "Classic Editorial Wardrobe",
     year: 2025,
@@ -441,7 +441,7 @@ export const portfolioData: Project[] = [
   {
     id: "monochrome-study",
     title: "The Monochrome Study",
-    location: "Delhi NCR, India",
+    location: "Poes Garden, Chennai",
     area: "350 sq.ft.",
     style: "Executive Home Office",
     year: 2026,
@@ -453,7 +453,7 @@ export const portfolioData: Project[] = [
   {
     id: "sunlight-atelier",
     title: "The Sunlight Atelier",
-    location: "Pune, India",
+    location: "Anna Nagar, Chennai",
     area: "320 sq.ft.",
     style: "Creative Writing Studio",
     year: 2025,
@@ -465,7 +465,7 @@ export const portfolioData: Project[] = [
   {
     id: "oak-bureau",
     title: "The Oak Bureau",
-    location: "Bangalore, India",
+    location: "Adyar, Chennai",
     area: "380 sq.ft.",
     style: "Minimalist Architect Studio",
     year: 2026,
@@ -477,7 +477,7 @@ export const portfolioData: Project[] = [
   {
     id: "library-study",
     title: "The Library Study",
-    location: "Hyderabad, India",
+    location: "T. Nagar, Chennai",
     area: "420 sq.ft.",
     style: "Traditional Modernist Library",
     year: 2025,
@@ -489,7 +489,7 @@ export const portfolioData: Project[] = [
   {
     id: "creative-parlor",
     title: "The Creative Parlor",
-    location: "Mumbai, India",
+    location: "Nungambakkam, Chennai",
     area: "340 sq.ft.",
     style: "Art & Drafting Studio",
     year: 2026,
@@ -501,7 +501,7 @@ export const portfolioData: Project[] = [
   {
     id: "executive-den",
     title: "The Executive Den",
-    location: "Kolkata, India",
+    location: "Velachery, Chennai",
     area: "410 sq.ft.",
     style: "Premium Dark Work Den",
     year: 2025,
@@ -515,11 +515,11 @@ export const portfolioData: Project[] = [
   {
     id: "vitreous-villa",
     title: "Vitreous House",
-    location: "Hyderabad, India",
+    location: "T. Nagar, Chennai",
     area: "5,500 sq.ft.",
     style: "Modern Glass Architecture",
     year: 2026,
-    description: "An architectural marvel constructed of glass, steel, and premium white marble. Designed to bring the surrounding lush greenery indoors while maintaining absolute privacy and premium thermal comfort.",
+    description: "An architectural marvel constructed of glass, steel, and premium white marble. Designed to bring the surrounding lush greenery indoors while maintaining absolute privacy.",
     image: V1,
     category: "Villa",
     additionalImages: [V2, V3, V4, V5]
@@ -527,7 +527,7 @@ export const portfolioData: Project[] = [
   {
     id: "concrete-monolith",
     title: "The Concrete Monolith",
-    location: "Goa, India",
+    location: "East Coast Road (ECR), Chennai",
     area: "6,200 sq.ft.",
     style: "Brutalist Modernist Villa",
     year: 2025,
@@ -539,7 +539,7 @@ export const portfolioData: Project[] = [
   {
     id: "cliffside-haven",
     title: "The Cliffside Haven",
-    location: "Alibaug, India",
+    location: "Thiruvanmiyur, Chennai",
     area: "7,500 sq.ft.",
     style: "Coastal Luxury Villa",
     year: 2025,
@@ -551,7 +551,7 @@ export const portfolioData: Project[] = [
   {
     id: "pavilion-villa",
     title: "The Pavilion Villa",
-    location: "Lonavala, India",
+    location: "Sholinganallur, Chennai",
     area: "5,800 sq.ft.",
     style: "Contemporary Pavilions",
     year: 2026,
@@ -563,7 +563,7 @@ export const portfolioData: Project[] = [
   {
     id: "zen-retreat",
     title: "The Zen Retreat Villa",
-    location: "Mahabaleshwar, India",
+    location: "Kotturpuram, Chennai",
     area: "6,000 sq.ft.",
     style: "Japanese Minimalist Estate",
     year: 2025,
