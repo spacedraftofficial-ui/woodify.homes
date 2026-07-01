@@ -69,65 +69,141 @@ export const Portfolio: React.FC = () => {
           </div>
         </div>
 
-        {/* Projects Masonry Grid */}
-        <motion.div
-          layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, idx) => (
-              <motion.div
-                key={project.id}
-                layout
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.6, delay: idx * 0.05 }}
-                className="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-white border border-woodify-text/5 shadow-sm hover:shadow-2xl transition-all duration-500"
-              >
-                {/* Image Frame */}
-                <div className="w-full h-full overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-85 group-hover:opacity-90 transition-opacity duration-300" />
-                </div>
+        {/* Projects Layout (Horizontal Swiper for 'All', Grid for Category Tabs) */}
+        {activeCategory === "All" ? (
+          <div className="relative group/swiper">
+            {/* Custom Navigation Buttons (Top Right) */}
+            <div className="hidden md:flex justify-end gap-3 mb-6">
+              <button className="portfolio-prev w-12 h-12 rounded-full bg-white border border-woodify-text/5 flex items-center justify-center text-woodify-text shadow-sm hover:bg-woodify-burgundy hover:text-white transition-colors disabled:opacity-30 disabled:pointer-events-none">
+                <HiChevronLeft className="text-xl" />
+              </button>
+              <button className="portfolio-next w-12 h-12 rounded-full bg-white border border-woodify-text/5 flex items-center justify-center text-woodify-text shadow-sm hover:bg-woodify-burgundy hover:text-white transition-colors disabled:opacity-30 disabled:pointer-events-none">
+                <HiChevronRight className="text-xl" />
+              </button>
+            </div>
 
-                {/* Card Inclusions */}
-                <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end text-white z-10">
-                  <span className="font-inter text-[9px] tracking-widest uppercase text-woodify-coral mb-2 block font-semibold">
-                    {project.style}
-                  </span>
-
-                  <h3 className="font-playfair text-2xl font-bold mb-2">
-                    {project.title}
-                  </h3>
-
-                  <p className="font-inter text-[11px] text-white/60 leading-relaxed font-light mb-6 line-clamp-2 h-0 group-hover:h-8 transition-all duration-500 overflow-hidden">
-                    {project.description}
-                  </p>
-
-                  {/* Micro Info Sheet */}
-                  <div className="flex justify-between items-center border-t border-white/10 pt-4 mt-2">
-                    <div>
-                      <p className="font-inter text-[9px] text-white/50 tracking-wider uppercase">Location</p>
-                      <p className="font-inter text-[10px] font-medium text-white/95">{project.location}</p>
+            <Swiper
+              modules={[Navigation, Pagination]}
+              navigation={{
+                prevEl: '.portfolio-prev',
+                nextEl: '.portfolio-next',
+              }}
+              pagination={{ clickable: true }}
+              spaceBetween={30}
+              breakpoints={{
+                320: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
+              }}
+              className="pb-16"
+            >
+              {filteredProjects.map((project) => (
+                <SwiperSlide key={project.id}>
+                  <div className="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-white border border-woodify-text/5 shadow-sm hover:shadow-2xl transition-all duration-500">
+                    {/* Image Frame */}
+                    <div className="w-full h-full overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-85 group-hover:opacity-90 transition-opacity duration-300" />
                     </div>
-                    <button
-                      onClick={() => setSelectedProject(project)}
-                      className="bg-white hover:bg-woodify-burgundy hover:text-white text-woodify-text font-inter text-[9px] tracking-widest uppercase font-semibold px-4 py-2 rounded-full transition-colors flex items-center gap-1"
-                    >
-                      View Case <HiChevronRight />
-                    </button>
+
+                    {/* Card Inclusions */}
+                    <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end text-white z-10">
+                      <span className="font-inter text-[9px] tracking-widest uppercase text-woodify-coral mb-2 block font-semibold">
+                        {project.style}
+                      </span>
+                      
+                      <h3 className="font-playfair text-2xl font-bold mb-2">
+                        {project.title}
+                      </h3>
+
+                      <p className="font-inter text-[11px] text-white/60 leading-relaxed font-light mb-6 line-clamp-2 h-0 group-hover:h-8 transition-all duration-500 overflow-hidden">
+                        {project.description}
+                      </p>
+
+                      {/* Micro Info Sheet */}
+                      <div className="flex justify-between items-center border-t border-white/10 pt-4 mt-2">
+                        <div>
+                          <p className="font-inter text-[9px] text-white/50 tracking-wider uppercase">Location</p>
+                          <p className="font-inter text-[10px] font-medium text-white/95">{project.location}</p>
+                        </div>
+                        <button
+                          onClick={() => setSelectedProject(project)}
+                          className="bg-white hover:bg-woodify-burgundy hover:text-white text-woodify-text font-inter text-[9px] tracking-widest uppercase font-semibold px-4 py-2 rounded-full transition-colors flex items-center gap-1"
+                        >
+                          View Case <HiChevronRight />
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        ) : (
+          <motion.div 
+            layout
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            <AnimatePresence mode="popLayout">
+              {filteredProjects.map((project, idx) => (
+                <motion.div
+                  key={project.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.6, delay: idx * 0.05 }}
+                  className="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-white border border-woodify-text/5 shadow-sm hover:shadow-2xl transition-all duration-500"
+                >
+                  {/* Image Frame */}
+                  <div className="w-full h-full overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-85 group-hover:opacity-90 transition-opacity duration-300" />
+                  </div>
+
+                  {/* Card Inclusions */}
+                  <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end text-white z-10">
+                    <span className="font-inter text-[9px] tracking-widest uppercase text-woodify-coral mb-2 block font-semibold">
+                      {project.style}
+                    </span>
+                    
+                    <h3 className="font-playfair text-2xl font-bold mb-2">
+                      {project.title}
+                    </h3>
+
+                    <p className="font-inter text-[11px] text-white/60 leading-relaxed font-light mb-6 line-clamp-2 h-0 group-hover:h-8 transition-all duration-500 overflow-hidden">
+                      {project.description}
+                    </p>
+
+                    {/* Micro Info Sheet */}
+                    <div className="flex justify-between items-center border-t border-white/10 pt-4 mt-2">
+                      <div>
+                        <p className="font-inter text-[9px] text-white/50 tracking-wider uppercase">Location</p>
+                        <p className="font-inter text-[10px] font-medium text-white/95">{project.location}</p>
+                      </div>
+                      <button
+                        onClick={() => setSelectedProject(project)}
+                        className="bg-white hover:bg-woodify-burgundy hover:text-white text-woodify-text font-inter text-[9px] tracking-widest uppercase font-semibold px-4 py-2 rounded-full transition-colors flex items-center gap-1"
+                      >
+                        View Case <HiChevronRight />
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        )}
 
         {/* Detailed Modal pop-up window */}
         <AnimatePresence>
