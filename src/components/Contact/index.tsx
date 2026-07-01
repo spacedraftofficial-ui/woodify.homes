@@ -84,10 +84,10 @@ export const Contact: React.FC = () => {
                 <div>
                   <h4 className="font-playfair text-sm font-bold text-woodify-text">Studio Email</h4>
                   <p className="font-inter text-xs text-woodify-text/70 mt-1 hover:text-woodify-burgundy transition-colors">
-                    <a href="mailto:design@woodifyhomes.com">design@woodifyhomes.com</a>
+                    <a href="mailto:crm@woodify.homes">crm@woodify.homes</a>
                   </p>
                   <p className="font-inter text-xs text-woodify-text/70">
-                    <a href="mailto:info@woodifyhomes.com">info@woodifyhomes.com</a>
+                    <a href="mailto:crm@woodify.net.in">crm@woodify.net.in</a>
                   </p>
                 </div>
               </div>
