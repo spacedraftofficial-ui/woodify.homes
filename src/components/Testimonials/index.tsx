@@ -7,11 +7,11 @@ import { testimonialsData, googleRatingStats } from '../../data/testimonials';
 
 export const Testimonials: React.FC = () => {
   return (
-    <section id="testimonials" className="py-24 md:py-32 bg-white overflow-hidden">
+    <section id="testimonials" className="py-14 md:py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Editorial Sub-headers */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-10 md:mb-16">
           <div className="lg:col-span-8">
             <motion.p
               initial={{ opacity: 0, y: 15 }}
@@ -67,7 +67,7 @@ export const Testimonials: React.FC = () => {
                     <span className="font-playfair text-6xl text-woodify-burgundy/15 block mb-4 leading-none">
                       “
                     </span>
-                    <blockquote className="font-playfair text-lg sm:text-2xl text-woodify-text leading-relaxed font-light mb-8">
+                    <blockquote className="font-playfair text-base sm:text-xl md:text-2xl text-woodify-text leading-relaxed font-light mb-6">
                       {test.quote}
                     </blockquote>
                     
