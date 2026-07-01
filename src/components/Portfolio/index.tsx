@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiX, HiOutlineLocationMarker, HiOutlineCalendar, HiOutlineHashtag, HiChevronRight } from 'react-icons/hi';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 import { portfolioData, type Project } from '../../data/portfolio';
 
 export const Portfolio: React.FC = () => {
