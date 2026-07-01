@@ -3,59 +3,166 @@ export interface Package {
   name: string;
   price: string;
   description: string;
-  sizeLimit: string;
   features: string[];
   isFeatured?: boolean;
 }
 
-export const packagesData: Package[] = [
-  {
-    id: "classic",
-    name: "Classic Design",
-    price: "₹8,50,000+",
-    description: "Elegant, essential design transformations ideal for modern apartment living. Practical layout planning meets premium durability.",
-    sizeLimit: "Up to 1,200 sq.ft. (Ideal for 2 BHK)",
-    features: [
-      "Modular Kitchen with marine ply cabinets",
-      "Wardrobes in MDF / Commercial laminate",
-      "Standard living room TV unit",
-      "Premium Asian Paints emulsion finishing",
-      "Essential electrical layout modifications",
-      "45-day guaranteed site handover"
-    ]
-  },
-  {
-    id: "elite",
-    name: "Elite Curation",
-    price: "₹15,00,000+",
-    description: "Bespoke design curation featuring custom architectural woodwork, designer lighting, and tailored spatial zoning.",
-    sizeLimit: "1,200 - 2,500 sq.ft. (Ideal for 3 BHK / Duplex)",
-    features: [
-      "Custom kitchen with acrylic shutter finishes",
-      "Full height veneer wardrobes with soft-close hardware",
-      "Designer fluted panel TV wall and foyer paneling",
-      "Bespoke false ceiling with magnetic track lights",
-      "Italian marble/Quartz vanity counter upgrades",
-      "Complete 3D visual render walkthroughs",
-      "Dedicated Project Manager & site engineer"
-    ],
-    isFeatured: true
-  },
-  {
-    id: "premium",
-    name: "Premium Luxury",
-    price: "₹28,00,000+",
-    description: "An uncompromising editorial design experience. Imported stone surfaces, custom furniture, and fully automated lighting integration.",
-    sizeLimit: "2,500+ sq.ft. (Ideal for Villas & Penthouses)",
-    features: [
-      "Fully customized imported PU & glass kitchen shutters",
-      "Bespoke walk-in closets with leather drawer trims",
-      "Exquisite travertine and Statuario marble walls",
-      "Architectural smart-home automated lighting systems",
-      "Designer texture wall finishes and architectural metal accents",
-      "Custom furniture styling & accessory curation",
-      "10-year warranty on all structural wood works",
-      "Weekly site update report and video logs"
-    ]
-  }
-];
+export const packagesData: Record<string, Package[]> = {
+  "2 BHK": [
+    {
+      id: "2bhk-classic",
+      name: "Classic Design",
+      price: "₹2,99,000+",
+      description: "Elegant, essential design transformations ideal for modern 2 BHK apartment living. Practical layout planning meets premium durability.",
+      features: [
+        "Modular Kitchen (Laminate Finish)",
+        "2 Wardrobes (Laminate Finish)",
+        "TV Unit",
+        "Basic False Ceiling (Living Room)",
+        "Standard Electrical & Lighting",
+        "Premium Paint Finish",
+        "2D Design & Layout",
+        "3-Year Warranty"
+      ]
+    },
+    {
+      id: "2bhk-elite",
+      name: "Elite Curation",
+      price: "₹4,49,000+",
+      description: "Bespoke design curation featuring custom premium woodwork, designer lighting, and tailored space storage upgrades.",
+      features: [
+        "Acrylic Modular Kitchen",
+        "2 Premium Wardrobes with Soft-Close Hardware",
+        "Designer TV Unit",
+        "Decorative False Ceiling with LED Lighting",
+        "Crockery Unit / Utility Storage",
+        "Quartz Kitchen Countertop",
+        "3D Design Visualization",
+        "5-Year Warranty"
+      ],
+      isFeatured: true
+    },
+    {
+      id: "2bhk-luxury",
+      name: "Premium Luxury",
+      price: "₹6,99,000+",
+      description: "An uncompromising editorial design experience with imported stone surfaces, custom furniture, and fully automated lighting integration.",
+      features: [
+        "Premium PU / Veneer Modular Kitchen",
+        "Designer Wardrobes with Premium Accessories",
+        "Luxury TV Feature Wall",
+        "Smart Ambient Lighting",
+        "Premium Wall Panelling",
+        "Customized Furniture & Storage",
+        "Complete 3D Walkthrough",
+        "10-Year Warranty"
+      ]
+    }
+  ],
+  "3 BHK": [
+    {
+      id: "3bhk-classic",
+      name: "Classic Design",
+      price: "₹3,99,000+",
+      description: "Elegant, essential design transformations ideal for standard 3 BHK spaces. Practical layout planning meets premium durability.",
+      features: [
+        "Modular Kitchen",
+        "3 Wardrobes",
+        "TV Unit",
+        "Basic False Ceiling (Living & Dining)",
+        "Premium Paint Finish",
+        "Shoe Rack & Loft Storage",
+        "2D Design Layout",
+        "3-Year Warranty"
+      ]
+    },
+    {
+      id: "3bhk-elite",
+      name: "Elite Curation",
+      price: "₹5,99,000+",
+      description: "Bespoke design curation featuring custom premium woodwork, false ceilings with cove lights, and dedicated workspaces.",
+      features: [
+        "Acrylic Modular Kitchen",
+        "3 Premium Wardrobes",
+        "Designer TV Unit",
+        "False Ceiling with Cove Lighting",
+        "Crockery Unit",
+        "Study Unit / Workstation",
+        "Quartz Countertop",
+        "3D Visualization",
+        "5-Year Warranty"
+      ],
+      isFeatured: true
+    },
+    {
+      id: "3bhk-luxury",
+      name: "Premium Luxury",
+      price: "₹8,99,000+",
+      description: "An uncompromising design experience featuring premium finishes, custom walk-in wardrobe, and smart ambient lighting.",
+      features: [
+        "PU / Veneer Modular Kitchen",
+        "Designer Walk-in Wardrobe (Master Bedroom)",
+        "Luxury TV Wall",
+        "Premium False Ceiling with Smart Lighting",
+        "Bar Unit / Display Unit",
+        "Imported Hardware",
+        "Designer Wall Panelling",
+        "Full 3D Walkthrough",
+        "10-Year Warranty"
+      ]
+    }
+  ],
+  "4 BHK": [
+    {
+      id: "4bhk-classic",
+      name: "Classic Design",
+      price: "₹4,99,000+",
+      description: "Elegant, essential design transformations ideal for spacious 4 BHK layouts. Practical planning meets premium durability.",
+      features: [
+        "Modular Kitchen",
+        "4 Wardrobes",
+        "TV Unit",
+        "False Ceiling (Living & Dining)",
+        "Premium Paint Finish",
+        "Utility Storage & Shoe Unit",
+        "2D Design Layout",
+        "3-Year Warranty"
+      ]
+    },
+    {
+      id: "4bhk-elite",
+      name: "Elite Curation",
+      price: "₹7,49,000+",
+      description: "Bespoke design curation featuring premium materials, detailed visualizations, and specialized home office spaces.",
+      features: [
+        "Acrylic Modular Kitchen",
+        "4 Premium Wardrobes",
+        "Designer TV Unit",
+        "Decorative False Ceiling with LED Lighting",
+        "Crockery & Bar Unit",
+        "Study Room Furniture",
+        "Quartz Countertop",
+        "3D Visualization",
+        "5-Year Warranty"
+      ],
+      isFeatured: true
+    },
+    {
+      id: "4bhk-luxury",
+      name: "Premium Luxury",
+      price: "₹10,99,000+",
+      description: "Our most premium tier with a luxury PU/veneer kitchen, walk-in closets, smart home lighting, and customized furniture.",
+      features: [
+        "Luxury PU / Veneer Modular Kitchen",
+        "Walk-in Wardrobe with Premium Accessories",
+        "Designer TV Feature Wall",
+        "Smart Home Lighting Provision",
+        "Home Office / Library Unit",
+        "Premium Wall & Ceiling Panelling",
+        "Customized Loose Furniture",
+        "Complete 3D Walkthrough",
+        "10-Year Warranty"
+      ]
+    }
+  ]
+};
