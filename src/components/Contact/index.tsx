@@ -31,11 +31,11 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-white overflow-hidden">
+    <section id="contact" className="py-14 md:py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
 
         {/* Section Title */}
-        <div className="max-w-3xl mb-20">
+        <div className="max-w-3xl mb-10 md:mb-16">
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
