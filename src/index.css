@@ -84,6 +84,14 @@
   text-align: left !important;
 }
 
+.portfolio-arc-swiper .swiper-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
 /* Swiper custom styling to match luxury color theme */
 .swiper-button-next,
 .swiper-button-prev {
@@ -103,29 +111,29 @@
   background: #5C2432 !important;
 }
 
-/* Premium 3D Arched Card Slider (Swiss Gradients inspired) */
-.portfolio-arc-swiper {
-  overflow: visible !important;
+/* ── Ring Carousel Slider thumb ────────────────────────────── */
+.ring-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #5C2432;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1px rgba(92, 36, 50, 0.35), 0 2px 8px rgba(92, 36, 50, 0.25);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-
-.portfolio-arc-swiper .swiper-slide {
-  transform-origin: center bottom;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
-  will-change: transform, opacity;
-  opacity: 0.55;
-  backface-visibility: hidden;
+.ring-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 2px rgba(92, 36, 50, 0.4), 0 4px 14px rgba(92, 36, 50, 0.35);
 }
-
-.portfolio-arc-swiper .swiper-slide-active {
-  opacity: 1 !important;
-  z-index: 10;
-}
-
-/* Parabolic arc translation, rotation and scaling using Swiper slide progress */
-.portfolio-arc-swiper .swiper-slide {
-  transform: 
-    translateY(calc(var(--swiper-slide-progress) * var(--swiper-slide-progress) * 85px - 50px))
-    rotate(calc(var(--swiper-slide-progress) * -14deg))
-    translateZ(calc(var(--swiper-slide-progress) * var(--swiper-slide-progress) * -60px))
-    scale(calc(1 - (var(--swiper-slide-progress) * var(--swiper-slide-progress) * 0.08)));
+.ring-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #5C2432;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1px rgba(92, 36, 50, 0.35), 0 2px 8px rgba(92, 36, 50, 0.25);
+  cursor: pointer;
 }
