@@ -30,7 +30,7 @@ export const Portfolio: React.FC = () => {
   return (
     <section id="portfolio" className="py-24 md:py-32 bg-woodify-bg">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        
+
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
           <div className="max-w-xl">
@@ -58,11 +58,10 @@ export const Portfolio: React.FC = () => {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`font-inter text-[10px] tracking-widest uppercase px-5 py-2.5 rounded-full transition-all duration-300 ${
-                  activeCategory === category
+                className={`font-inter text-[10px] tracking-widest uppercase px-5 py-2.5 rounded-full transition-all duration-300 ${activeCategory === category
                     ? 'bg-woodify-text text-white shadow-md'
                     : 'bg-white hover:bg-woodify-text/5 text-woodify-text/75 border border-woodify-text/5'
-                }`}
+                  }`}
               >
                 {category}
               </button>
@@ -71,7 +70,7 @@ export const Portfolio: React.FC = () => {
         </div>
 
         {/* Projects Masonry Grid */}
-        <motion.div 
+        <motion.div
           layout
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
@@ -102,7 +101,7 @@ export const Portfolio: React.FC = () => {
                   <span className="font-inter text-[9px] tracking-widest uppercase text-woodify-coral mb-2 block font-semibold">
                     {project.style}
                   </span>
-                  
+
                   <h3 className="font-playfair text-2xl font-bold mb-2">
                     {project.title}
                   </h3>
@@ -151,7 +150,7 @@ export const Portfolio: React.FC = () => {
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 className="fixed inset-x-4 bottom-4 top-4 md:inset-x-12 md:bottom-12 md:top-12 lg:inset-x-24 lg:bottom-16 lg:top-16 bg-[#F8F6F2] rounded-3xl z-50 shadow-2xl overflow-hidden border border-woodify-text/5 flex flex-col lg:flex-row"
               >
-                
+
                 {/* Left Side: Images Slideshow */}
                 <div className="w-full lg:w-3/5 h-2/5 lg:h-full relative bg-black">
                   <button
@@ -205,7 +204,7 @@ export const Portfolio: React.FC = () => {
                     <h3 className="font-playfair text-3xl font-bold text-woodify-text mb-4">
                       {selectedProject.title}
                     </h3>
-                    
+
                     <p className="font-inter text-xs text-woodify-text/70 leading-relaxed font-light mb-8">
                       {selectedProject.description}
                     </p>
