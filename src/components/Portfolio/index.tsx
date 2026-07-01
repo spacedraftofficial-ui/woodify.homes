@@ -32,28 +32,30 @@ export const Portfolio: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
 
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
-          <div className="max-w-xl">
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="font-inter text-xs tracking-widest uppercase font-semibold text-woodify-burgundy mb-3"
-            >
-              Selected Works
-            </motion.p>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-woodify-text leading-tight"
-            >
-              Immersive Residential Portfolio
-            </motion.h2>
-          </div>
+        <div className={`flex flex-col md:flex-row ${activeCategory === "All" ? "justify-center" : "md:items-end justify-between"} gap-8 mb-20`}>
+          {activeCategory !== "All" && (
+            <div className="max-w-xl">
+              <motion.p
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="font-inter text-xs tracking-widest uppercase font-semibold text-woodify-burgundy mb-3"
+              >
+                Selected Works
+              </motion.p>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-woodify-text leading-tight"
+              >
+                {activeCategory} Designs
+              </motion.h2>
+            </div>
+          )}
 
           {/* Categories Tab Scroll */}
-          <div className="flex flex-wrap gap-2.5 max-w-full overflow-x-auto pb-2 scrollbar-none">
+          <div className={`flex flex-wrap gap-2.5 max-w-full overflow-x-auto pb-2 scrollbar-none ${activeCategory === "All" ? "justify-center" : ""}`}>
             {categories.map((category) => (
               <button
                 key={category}
@@ -71,7 +73,39 @@ export const Portfolio: React.FC = () => {
 
         {/* Projects Layout (Horizontal Swiper for 'All', Grid for Category Tabs) */}
         {activeCategory === "All" ? (
-          <div className="relative">
+          <div className="relative pt-12 pb-36 min-h-[580px] flex flex-col items-center justify-center overflow-visible">
+            
+            {/* Center Content under the Dome (Swiss Gradients/AI Photos style) */}
+            <div className="absolute top-[68%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center max-w-xl z-0 pointer-events-none px-6">
+              <motion.h2 
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-woodify-text leading-tight mb-4"
+              >
+                Immersive Residential Portfolio
+              </motion.h2>
+              <motion.p 
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="font-inter text-xs sm:text-sm text-woodify-text/60 leading-relaxed font-light mb-6"
+              >
+                Explore our selected works combining Scandinavian elegance, Japanese minimalism, and premium bespoke residential architecture across Chennai.
+              </motion.p>
+              <motion.button 
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                onClick={() => {
+                  const contact = document.querySelector('#contact');
+                  if (contact) contact.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="pointer-events-auto inline-block bg-woodify-text hover:bg-woodify-burgundy text-white font-inter text-[10px] tracking-widest uppercase font-semibold px-6 py-3.5 rounded-full transition-colors shadow-md hover:shadow-lg"
+              >
+                Start Consultation &rarr;
+              </motion.button>
+            </div>
             <Swiper
               modules={[Pagination]}
               pagination={{ clickable: true }}
