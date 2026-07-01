@@ -92,7 +92,6 @@ export const Portfolio: React.FC = () => {
 
           // ── MOBILE LAYOUT: focused single-card carousel ─────────────────
           if (isMobile) {
-            const project = filteredProjects[activeIndex];
             return (
               <div className="flex flex-col gap-6">
 
