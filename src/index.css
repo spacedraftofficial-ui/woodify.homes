@@ -124,8 +124,8 @@
 /* Parabolic arc translation, rotation and scaling using Swiper slide progress */
 .portfolio-arc-swiper .swiper-slide {
   transform: 
-    translateY(calc(var(--swiper-slide-progress) * var(--swiper-slide-progress) * 24px))
-    rotate(calc(var(--swiper-slide-progress) * 10deg))
-    translateZ(calc(var(--swiper-slide-progress) * var(--swiper-slide-progress) * -40px))
-    scale(calc(1 - (var(--swiper-slide-progress) * var(--swiper-slide-progress) * 0.04) + (1 - var(--swiper-slide-progress) * var(--swiper-slide-progress)) * 0.02));
+    translateY(calc(var(--swiper-slide-progress) * var(--swiper-slide-progress) * 85px - 50px))
+    rotate(calc(var(--swiper-slide-progress) * -14deg))
+    translateZ(calc(var(--swiper-slide-progress) * var(--swiper-slide-progress) * -60px))
+    scale(calc(1 - (var(--swiper-slide-progress) * var(--swiper-slide-progress) * 0.08)));
 }
