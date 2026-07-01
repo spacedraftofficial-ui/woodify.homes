@@ -166,7 +166,3 @@ export const InteriorPackages: React.FC = () => {
 };
 
 export default InteriorPackages;
-  );
-};
-
-export default InteriorPackages;
