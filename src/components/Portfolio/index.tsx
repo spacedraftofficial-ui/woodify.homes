@@ -71,43 +71,18 @@ export const Portfolio: React.FC = () => {
 
         {/* Projects Layout (Horizontal Swiper for 'All', Grid for Category Tabs) */}
         {activeCategory === "All" ? (
-          <div className="relative group/swiper">
-            {/* Custom Navigation Buttons (Top Right) */}
-            <div className="hidden md:flex justify-end gap-3 mb-6">
-              <button className="portfolio-prev w-12 h-12 rounded-full bg-white border border-woodify-text/5 flex items-center justify-center text-woodify-text shadow-sm hover:bg-woodify-burgundy hover:text-white transition-colors disabled:opacity-30 disabled:pointer-events-none">
-                <HiChevronLeft className="text-xl" />
-              </button>
-              <button className="portfolio-next w-12 h-12 rounded-full bg-white border border-woodify-text/5 flex items-center justify-center text-woodify-text shadow-sm hover:bg-woodify-burgundy hover:text-white transition-colors disabled:opacity-30 disabled:pointer-events-none">
-                <HiChevronRight className="text-xl" />
-              </button>
-            </div>
-
+          <div className="relative">
             <Swiper
-              modules={[Navigation, Pagination, EffectCoverflow]}
-              effect={'coverflow'}
+              modules={[Pagination]}
+              pagination={{ clickable: true }}
               centeredSlides={true}
               grabCursor={true}
-              navigation={{
-                prevEl: '.portfolio-prev',
-                nextEl: '.portfolio-next',
-              }}
-              pagination={{ clickable: true }}
-              coverflowEffect={{
-                rotate: 20,
-                stretch: -15,
-                depth: 120,
-                modifier: 1.2,
-                slideShadows: false,
-              }}
-              breakpoints={{
-                320: { slidesPerView: 1 },
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 }
-              }}
-              className="pb-16"
+              watchSlidesProgress={true}
+              slidesPerView={'auto'}
+              className="pb-32 portfolio-arc-swiper"
             >
               {filteredProjects.map((project) => (
-                <SwiperSlide key={project.id}>
+                <SwiperSlide key={project.id} className="w-[280px] sm:w-[320px] md:w-[360px] select-none">
                   <div className="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-white border border-woodify-text/5 shadow-sm hover:shadow-2xl transition-all duration-500">
                     {/* Image Frame */}
                     <div className="w-full h-full overflow-hidden">
