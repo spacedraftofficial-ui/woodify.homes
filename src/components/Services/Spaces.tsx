@@ -84,7 +84,7 @@ export const SpacesWeTransform: React.FC = () => {
     : spacesData.filter(space => space.category === activeCategory);
 
   return (
-    <section id="spaces" className="py-24 md:py-32 bg-woodify-bg">
+    <section id="spaces" className="py-14 md:py-24 bg-woodify-bg">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Section Header */}

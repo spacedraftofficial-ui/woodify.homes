@@ -4,7 +4,7 @@ import { processData } from '../../data/process';
 
 export const OurProcess: React.FC = () => {
   return (
-    <section id="process" className="py-24 md:py-32 bg-woodify-bg overflow-hidden">
+    <section id="process" className="py-14 md:py-24 bg-woodify-bg overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Section Header */}

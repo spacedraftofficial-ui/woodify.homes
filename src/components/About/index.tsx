@@ -37,7 +37,7 @@ const Counter: React.FC<{ value: number; suffix?: string; duration?: number }> =
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 md:py-32 bg-woodify-bg overflow-hidden">
+    <section id="about" className="py-14 md:py-24 bg-woodify-bg overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Sub-header Editorial layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">

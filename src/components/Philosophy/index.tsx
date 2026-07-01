@@ -28,7 +28,7 @@ const pillars: PhilosophyPillar[] = [
 
 export const DesignPhilosophy: React.FC = () => {
   return (
-    <section id="philosophy" className="py-24 md:py-32 bg-woodify-bg overflow-hidden">
+    <section id="philosophy" className="py-14 md:py-24 bg-woodify-bg overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
           

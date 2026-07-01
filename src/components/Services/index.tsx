@@ -50,7 +50,7 @@ const pillars: Pillar[] = [
 
 export const WhyChooseUs: React.FC = () => {
   return (
-    <section id="why-choose-us" className="py-24 md:py-32 bg-white relative overflow-hidden">
+    <section id="why-choose-us" className="py-14 md:py-24 bg-white relative overflow-hidden">
       {/* Editorial Decorative Background Pattern */}
       <div className="absolute right-0 top-0 w-96 h-96 bg-woodify-bg rounded-full filter blur-3xl opacity-30 -z-10" />
       <div className="absolute left-0 bottom-0 w-96 h-96 bg-woodify-burgundy/5 rounded-full filter blur-3xl opacity-20 -z-10" />

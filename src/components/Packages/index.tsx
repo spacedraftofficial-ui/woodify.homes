@@ -17,7 +17,7 @@ export const InteriorPackages: React.FC = () => {
   };
 
   return (
-    <section id="packages" className="py-24 md:py-32 bg-white overflow-hidden">
+    <section id="packages" className="py-14 md:py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Section Header */}
