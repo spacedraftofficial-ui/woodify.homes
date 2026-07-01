@@ -15,7 +15,7 @@ export const Materials: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Header Block */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}

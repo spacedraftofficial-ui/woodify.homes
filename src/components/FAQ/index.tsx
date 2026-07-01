@@ -15,7 +15,7 @@ export const FAQ: React.FC = () => {
       <div className="max-w-4xl mx-auto px-6">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-20">
+        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -57,7 +57,7 @@ export const WhyChooseUs: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header Block */}
-        <div className="max-w-2xl mb-20">
+        <div className="max-w-2xl mb-10 md:mb-16">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
