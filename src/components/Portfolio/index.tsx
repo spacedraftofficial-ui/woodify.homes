@@ -83,13 +83,22 @@ export const Portfolio: React.FC = () => {
             </div>
 
             <Swiper
-              modules={[Navigation, Pagination]}
+              modules={[Navigation, Pagination, EffectCoverflow]}
+              effect={'coverflow'}
+              centeredSlides={true}
+              grabCursor={true}
               navigation={{
                 prevEl: '.portfolio-prev',
                 nextEl: '.portfolio-next',
               }}
               pagination={{ clickable: true }}
-              spaceBetween={30}
+              coverflowEffect={{
+                rotate: 20,
+                stretch: -15,
+                depth: 120,
+                modifier: 1.2,
+                slideShadows: false,
+              }}
               breakpoints={{
                 320: { slidesPerView: 1 },
                 768: { slidesPerView: 2 },
