@@ -99,8 +99,8 @@ export const Contact: React.FC = () => {
                 <div>
                   <h4 className="font-playfair text-sm font-bold text-woodify-text">Headquarters</h4>
                   <p className="font-inter text-xs text-woodify-text/70 mt-1 leading-relaxed font-light">
-                    82, Richmond Road, Richmond Town, <br />
-                    Bangalore, Karnataka, 560025, India
+                    134, Kamarajar Street, Indira nagar, <br />
+                    Valasaravakkam, Chennai - 600 087.
                   </p>
                 </div>
               </div>
