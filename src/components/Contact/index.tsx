@@ -141,7 +141,7 @@ export const Contact: React.FC = () => {
             <div className="rounded-2xl overflow-hidden aspect-[16/9] border border-woodify-text/5 shadow-sm">
               <iframe
                 title="Woodify Homes Studio Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d3887.989714777478!2d77.5992!3d12.9667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU4JzAwLjEiTiA3N8KwMzUnNTcuMSJF!5e0!3m2!1sen!2sin!4v1625000000000!5m2!1sen!2sin"
+                src="https://maps.google.com/maps?q=134,%20Kamarajar%20Street,%20Indira%20nagar,%20Valasaravakkam,%20Chennai%20-%20600%20087&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 className="w-full h-full border-none filter grayscale opacity-80"
                 allowFullScreen={false}
                 loading="lazy"
