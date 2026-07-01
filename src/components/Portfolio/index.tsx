@@ -87,18 +87,111 @@ export const Portfolio: React.FC = () => {
 
         {/* Projects Layout */}
         {activeCategory === "All" ? (() => {
-          // ── Pure React Ring Carousel (no Swiper) ─────────────────────────
-          // Cards orbit an ellipse. The active card (distance=0) sits at the
-          // bottom of the ellipse; distant cards wrap around to the top.
-          // Text block is anchored at the geometric centre of the ellipse with
-          // a high z-index so it is always readable in the open upper half.
+          const total = filteredProjects.length;
+          const pct   = total > 1 ? activeIndex / (total - 1) : 0;
+
+          // ── MOBILE LAYOUT: focused single-card carousel ─────────────────
+          if (isMobile) {
+            const project = filteredProjects[activeIndex];
+            return (
+              <div className="flex flex-col gap-6">
+
+                {/* Header text */}
+                <div className="text-center px-4">
+                  <h2 className="font-playfair text-2xl font-bold tracking-tight text-woodify-text leading-tight mb-2">
+                    Immersive Residential Portfolio
+                  </h2>
+                  <p className="font-inter text-xs text-woodify-text/55 leading-relaxed font-light mb-4">
+                    Scandinavian elegance meets Japanese minimalism — across Chennai's finest neighbourhoods.
+                  </p>
+                  <button
+                    onClick={() => {
+                      const contact = document.querySelector('#contact');
+                      if (contact) contact.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="inline-block bg-woodify-text hover:bg-woodify-burgundy text-white font-inter text-[10px] tracking-widest uppercase font-semibold px-6 py-3 rounded-full transition-colors shadow-md"
+                  >
+                    Start Consultation →
+                  </button>
+                </div>
+
+                {/* Card + Peek Neighbours */}
+                <div className="relative w-full overflow-hidden" style={{ height: 380 }}>
+                  {filteredProjects.map((p, index) => {
+                    const dist = index - activeIndex;
+                    if (Math.abs(dist) > 1) return null; // only render -1, 0, +1
+                    const translateX = dist * 82; // % offset: 0% centre, ±82% peek
+                    const scale = dist === 0 ? 1 : 0.82;
+                    const opacity = dist === 0 ? 1 : 0.45;
+                    const zIndex = dist === 0 ? 10 : 5;
+                    return (
+                      <div
+                        key={p.id}
+                        className="absolute inset-y-0 select-none"
+                        style={{
+                          width: '80%',
+                          left: '10%',
+                          transform: `translateX(${translateX}%) scale(${scale})`,
+                          opacity,
+                          zIndex,
+                          transition: 'transform 0.45s cubic-bezier(0.16,1,0.3,1), opacity 0.45s ease',
+                          willChange: 'transform, opacity',
+                        }}
+                      >
+                        <div
+                          className="group relative rounded-2xl overflow-hidden w-full h-full bg-white shadow-lg cursor-pointer"
+                          onClick={() => dist === 0 ? setSelectedProject(p) : setActiveIndex(index)}
+                        >
+                          <img src={p.image} alt={p.title} className="w-full h-full object-cover" loading="lazy" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
+                          <div className="absolute inset-0 p-5 flex flex-col justify-end text-white">
+                            <span className="font-inter text-[9px] tracking-widest uppercase text-woodify-coral mb-1 font-semibold block">{p.style}</span>
+                            <h3 className="font-playfair text-lg font-bold leading-snug mb-2">{p.title}</h3>
+                            <div className="flex justify-between items-center border-t border-white/15 pt-2">
+                              <p className="font-inter text-[9px] text-white/80">{p.location}</p>
+                              <span className="bg-white/90 text-woodify-text font-inter text-[8px] tracking-wider uppercase font-semibold px-3 py-1 rounded-full">View →</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Counter + Slider + Arrows */}
+                <div className="flex flex-col items-center gap-3 px-6">
+                  <span className="font-inter text-[10px] tracking-wider font-semibold text-woodify-burgundy">
+                    {String(activeIndex + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
+                  </span>
+                  <div className="relative w-full flex items-center" style={{ height: 24 }}>
+                    <div className="absolute inset-x-0 h-[2px] rounded-full bg-woodify-text/12" />
+                    <div className="absolute left-0 h-[2px] rounded-full bg-woodify-burgundy transition-all duration-300" style={{ width: `${pct * 100}%` }} />
+                    <input
+                      type="range" min={0} max={total - 1} value={activeIndex}
+                      onChange={(e) => setActiveIndex(parseInt(e.target.value, 10))}
+                      className="ring-slider relative w-full appearance-none bg-transparent cursor-pointer focus:outline-none"
+                    />
+                  </div>
+                  <div className="flex gap-4">
+                    <button onClick={() => setActiveIndex(i => Math.max(0, i - 1))}
+                      className="w-10 h-10 rounded-full border border-woodify-text/15 flex items-center justify-center text-woodify-text hover:bg-woodify-burgundy hover:text-white hover:border-woodify-burgundy transition-all text-lg font-bold"
+                      aria-label="Previous">‹</button>
+                    <button onClick={() => setActiveIndex(i => Math.min(total - 1, i + 1))}
+                      className="w-10 h-10 rounded-full border border-woodify-text/15 flex items-center justify-center text-woodify-text hover:bg-woodify-burgundy hover:text-white hover:border-woodify-burgundy transition-all text-lg font-bold"
+                      aria-label="Next">›</button>
+                  </div>
+                </div>
+
+              </div>
+            );
+          }
+
+          // ── DESKTOP LAYOUT: ellipse ring ────────────────────────────────
           const CARD_W   = 220;   // px — slightly larger cards
           const CARD_H   = 290;   // px — 4:5.3 aspect
           const RX       = 440;   // horizontal radius
           const RY       = 250;   // vertical radius — more breathing room
           const DEG      = 30;    // angular gap between cards (degrees)
-          const total    = filteredProjects.length;
-          const pct      = total > 1 ? activeIndex / (total - 1) : 0;
 
           // Stage: tall enough to hold a full vertical ellipse + one card
           // Ellipse top edge (smallest/faded cards) sits 20px from stage top.
