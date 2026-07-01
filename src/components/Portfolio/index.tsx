@@ -116,8 +116,8 @@ export const Portfolio: React.FC = () => {
               className="pb-32 portfolio-arc-swiper"
             >
               {filteredProjects.map((project) => (
-                <SwiperSlide key={project.id} className="w-[280px] sm:w-[320px] md:w-[360px] select-none">
-                  <div className="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-white border border-woodify-text/5 shadow-sm hover:shadow-2xl transition-all duration-500">
+                <SwiperSlide key={project.id} className="w-[220px] sm:w-[260px] md:w-[300px] select-none py-6">
+                  <div className="group relative rounded-[28px] overflow-hidden aspect-[4/5] bg-white border border-woodify-text/5 shadow-sm hover:shadow-2xl transition-all duration-500">
                     {/* Image Frame */}
                     <div className="w-full h-full overflow-hidden">
                       <img
