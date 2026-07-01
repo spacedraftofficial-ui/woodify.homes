@@ -1,8 +1,23 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { HiArrowDown } from 'react-icons/hi';
 
+const HERO_BGS = [
+  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80',
+  'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80',
+  'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1920&q=80'
+];
+
 export const Hero: React.FC = () => {
+  const [bgIndex, setBgIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBgIndex((prev) => (prev + 1) % HERO_BGS.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
+
   const handleScrollTo = (id: string) => {
     const element = document.querySelector(id);
     if (element) {
@@ -15,17 +30,21 @@ export const Hero: React.FC = () => {
       id="home"
       className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-woodify-bg"
     >
-      {/* Background Image with Zoom & Fade-in */}
-      <div className="absolute inset-0 z-0">
-        <motion.div
-          initial={{ scale: 1.1, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.8, ease: 'easeOut' }}
-          className="w-full h-full bg-cover bg-center"
-          style={{
-            backgroundImage: `linear-gradient(to bottom, rgba(27,27,27,0.5) 0%, rgba(27,27,27,0.4) 60%, rgba(248,246,242,1) 98%), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80')`,
-          }}
-        />
+      {/* Background Image with Zoom & Fade-in Carousel */}
+      <div className="absolute inset-0 z-0 select-none pointer-events-none">
+        <AnimatePresence mode="popLayout">
+          <motion.div
+            key={bgIndex}
+            initial={{ scale: 1.05, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute inset-0 w-full h-full bg-cover bg-center"
+            style={{
+              backgroundImage: `linear-gradient(to bottom, rgba(27,27,27,0.5) 0%, rgba(27,27,27,0.4) 60%, rgba(248,246,242,1) 98%), url('${HERO_BGS[bgIndex]}')`,
+            }}
+          />
+        </AnimatePresence>
       </div>
 
       {/* Hero Content Container */}
