@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { HiX, HiOutlineLocationMarker, HiOutlineCalendar, HiOutlineHashtag, HiChevronRight } from 'react-icons/hi';
+import { HiX, HiOutlineLocationMarker, HiOutlineCalendar, HiOutlineHashtag, HiChevronRight, HiChevronLeft } from 'react-icons/hi';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { portfolioData, type Project } from '../../data/portfolio';
