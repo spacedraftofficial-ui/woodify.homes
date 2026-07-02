@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-// @ts-ignore
+// @ts-expect-error
 import LightGallery from 'lightgallery/react';
-// @ts-ignore
+// @ts-expect-error
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
-// @ts-ignore
+// @ts-expect-error
 import lgZoom from 'lightgallery/plugins/zoom';
 
 interface SpaceType {
