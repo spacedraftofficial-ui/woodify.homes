@@ -12,7 +12,7 @@ import {
 interface Pillar {
   title: string;
   description: string;
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType<{ className?: string }>;
 }
 
 const pillars: Pillar[] = [
