@@ -4,6 +4,6 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 // test comment
 export default defineConfig({
-  base: '/woodify.homes/',
+  base: '/',
   plugins: [react()],
 })
