@@ -69,10 +69,10 @@ export const Contact: React.FC = () => {
                 <div>
                   <h4 className="font-playfair text-sm font-bold text-woodify-text">Phone Enquiry</h4>
                   <p className="font-inter text-xs text-woodify-text/70 mt-1 hover:text-woodify-burgundy transition-colors">
-                    <a href="tel:+919042863983">+91 90428 63983</a>
+                    <a href="tel:+91 89258 93357">+91 89258 93357</a>
                   </p>
                   <p className="font-inter text-xs text-woodify-text/70">
-                    <a href="tel:+91 80234 56789">+91 80234 56789</a>
+                    <a href="tel:+91 73057 78404">+91 73057 78404</a>
                   </p>
                 </div>
               </div>
