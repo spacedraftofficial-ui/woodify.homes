@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-// @ts-expect-error - lightgallery does not export type definitions
 import LightGallery from 'lightgallery/react';
-// @ts-expect-error - lightgallery thumbnail plugin does not export type definitions
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
-// @ts-expect-error - lightgallery zoom plugin does not export type definitions
 import lgZoom from 'lightgallery/plugins/zoom';
 
 interface SpaceType {
