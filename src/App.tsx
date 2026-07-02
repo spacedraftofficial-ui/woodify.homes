@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import WhyChooseUs from './components/Services';
-import SpacesWeTransform from './components/Services/Spaces';
+
 import DesignPhilosophy from './components/Philosophy';
 import InteriorPackages from './components/Packages';
 import OurProcess from './components/Process';
@@ -23,7 +23,7 @@ const LandingPage: React.FC = () => {
       <Hero />
       <About />
       <WhyChooseUs />
-      <SpacesWeTransform />
+      
       <DesignPhilosophy />
       <InteriorPackages />
       <OurProcess />

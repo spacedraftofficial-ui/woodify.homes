@@ -425,7 +425,7 @@ export const Portfolio: React.FC = () => {
                 animate={{ opacity: 0.6 }}
                 exit={{ opacity: 0 }}
                 onClick={() => setSelectedProject(null)}
-                className="fixed inset-0 bg-black z-50 cursor-pointer"
+                className="fixed inset-0 bg-black z-[200] cursor-pointer"
               />
 
               {/* Panel Container */}
@@ -434,7 +434,7 @@ export const Portfolio: React.FC = () => {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 30 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="fixed inset-x-4 bottom-4 top-4 md:inset-x-12 md:bottom-12 md:top-12 lg:inset-x-24 lg:bottom-16 lg:top-16 bg-[#F8F6F2] rounded-3xl z-50 shadow-2xl overflow-hidden border border-woodify-text/5 flex flex-col lg:flex-row"
+                className="fixed inset-x-4 bottom-4 top-4 md:inset-x-12 md:bottom-12 md:top-12 lg:inset-x-24 lg:bottom-16 lg:top-16 bg-[#F8F6F2] rounded-3xl z-[200] shadow-2xl overflow-hidden border border-woodify-text/5 flex flex-col lg:flex-row"
               >
 
                 {/* Left Side: Images Slideshow */}
