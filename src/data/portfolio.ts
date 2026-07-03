@@ -52,6 +52,7 @@ import V2 from '../assets/IMG/VIlla/V 2.jpg';
 import V3 from '../assets/IMG/VIlla/V 3.jpg';
 import V4 from '../assets/IMG/VIlla/V 4.jpg';
 import V5 from '../assets/IMG/VIlla/V 5.jpg';
+import V6 from '../assets/IMG/VIlla/V 6.jpg';
 
 export interface Project {
   id: string;
@@ -522,7 +523,7 @@ export const portfolioData: Project[] = [
     description: "An architectural marvel constructed of glass, steel, and premium white marble. Designed to bring the surrounding lush greenery indoors while maintaining absolute privacy.",
     image: V1,
     category: "Villa",
-    additionalImages: [V2, V3, V4, V5]
+    additionalImages: [V2, V3, V4, V5, V6]
   },
   {
     id: "concrete-monolith",
@@ -534,7 +535,7 @@ export const portfolioData: Project[] = [
     description: "Constructed of cast-in-place raw board-marked concrete and offset by rich warm teak paneling, pivoting steel entryways, and infinity pool views.",
     image: V2,
     category: "Villa",
-    additionalImages: [V1, V3, V4, V5]
+    additionalImages: [V1, V3, V4, V5, V6]
   },
   {
     id: "cliffside-haven",
@@ -546,7 +547,7 @@ export const portfolioData: Project[] = [
     description: "A premium ocean-facing estate constructed around an open pavilion concept, using rough limestone columns, raw concrete beams, and high glass facades.",
     image: V3,
     category: "Villa",
-    additionalImages: [V1, V2, V4, V5]
+    additionalImages: [V1, V2, V4, V5, V6]
   },
   {
     id: "pavilion-villa",
@@ -558,7 +559,7 @@ export const portfolioData: Project[] = [
     description: "A series of interconnected glass pavilions linked by floating wooden breezeways and manicured landscape water features.",
     image: V4,
     category: "Villa",
-    additionalImages: [V1, V2, V3, V5]
+    additionalImages: [V1, V2, V3, V5, V6]
   },
   {
     id: "zen-retreat",
@@ -570,6 +571,18 @@ export const portfolioData: Project[] = [
     description: "A serene woodland villa built around a central rock garden, sliding Shoji screens, tatami lounge mats, and outdoor hot spring baths.",
     image: V5,
     category: "Villa",
-    additionalImages: [V1, V2, V3, V4]
+    additionalImages: [V1, V2, V3, V4, V6]
+  },
+  {
+    id: "courtyard-manor",
+    title: "The Courtyard Manor",
+    location: "Besant Nagar, Chennai",
+    area: "6,800 sq.ft.",
+    style: "Modern Courtyard Villa",
+    year: 2026,
+    description: "A luxury multi-level villa designed around a central open-air atrium, integrating natural stone facades, timber wood screens, and seamless indoor-outdoor water pathways.",
+    image: V6,
+    category: "Villa",
+    additionalImages: [V1, V2, V3, V4, V5]
   }
 ];
