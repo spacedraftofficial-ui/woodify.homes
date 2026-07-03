@@ -1,11 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, type HTMLMotionProps } from 'framer-motion';
 import clsx from 'clsx';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends Omit<HTMLMotionProps<'button'>, 'children'> {
   children: React.ReactNode;
   variant?: 'primary' | 'secondary';
-  className?: string;
 }
 
 /**
@@ -34,3 +33,4 @@ export const Button: React.FC<ButtonProps> = ({
     </motion.button>
   );
 };
+

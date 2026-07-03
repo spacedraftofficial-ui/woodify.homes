@@ -1,10 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
-import { motion } from 'framer-motion';
+import { motion, type HTMLMotionProps } from 'framer-motion';
 
-interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+interface CardProps extends Omit<HTMLMotionProps<'div'>, 'children'> {
   children: React.ReactNode;
-  className?: string;
   hoverEffect?: boolean;
 }
 
@@ -25,3 +24,4 @@ export const Card: React.FC<CardProps> = ({ children, className, hoverEffect = t
     </motion.div>
   );
 };
+
