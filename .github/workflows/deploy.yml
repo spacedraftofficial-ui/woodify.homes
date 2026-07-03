@@ -18,10 +18,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # Build job to compile the code and upload the Pages artifact
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -47,6 +45,15 @@ jobs:
         with:
           path: './dist'
 
+  # Deploy job to deploy the uploaded artifact
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
