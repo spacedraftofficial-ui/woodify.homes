@@ -15,8 +15,21 @@ import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
+// Import new subpages and components
+import PackagesPage from './pages/PackagesPage';
+import PortfolioPage from './pages/PortfolioPage';
+import ProjectCaseStudy from './pages/ProjectCaseStudy';
+import CRMDashboard from './pages/CRMDashboard';
+import { LeadModal } from './components/ui/LeadModal';
+import MobileCTA from './components/MobileCTA';
+import VillaInterior from './components/VillaInterior';
+
 // Main Landing Page Layout
 const LandingPage: React.FC = () => {
+  React.useEffect(() => {
+    document.title = "Woodify Homes | Premium Residential Interiors & Turnkey Home Design";
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -26,6 +39,7 @@ const LandingPage: React.FC = () => {
       
       <DesignPhilosophy />
       <InteriorPackages />
+      <VillaInterior />
       <OurProcess />
       <Materials />
       <Portfolio />
@@ -42,7 +56,13 @@ export const App: React.FC = () => {
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/packages" element={<PackagesPage />} />
+        <Route path="/projects" element={<PortfolioPage />} />
+        <Route path="/projects/:id" element={<ProjectCaseStudy />} />
+        <Route path="/crm" element={<CRMDashboard />} />
       </Routes>
+      <LeadModal />
+      <MobileCTA />
     </Router>
   );
 };

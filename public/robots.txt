@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://woodifyhomes.com/sitemap.xml
+Sitemap: https://woodify.homes/sitemap.xml

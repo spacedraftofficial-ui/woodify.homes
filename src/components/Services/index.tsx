@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  FiFeather, 
-  FiLayers, 
-  FiTrendingUp, 
-  FiDollarSign, 
+  FiUser, 
+  FiTarget, 
+  FiFileText, 
   FiUsers, 
-  FiClock 
+  FiShield, 
+  FiHeart 
 } from 'react-icons/fi';
 
 interface Pillar {
@@ -17,34 +17,34 @@ interface Pillar {
 
 const pillars: Pillar[] = [
   {
-    title: "Thoughtful Design",
-    description: "Every blueprint is tailored to your habits and rhythms. We avoid template design, crafting distinct layouts that breathe naturally.",
-    icon: FiFeather
+    title: "Designed Around You",
+    description: "Every blueprint is tailored to your habits and rhythms. We avoid templates, crafting distinct layouts that breathe naturally and suit your personal lifestyle.",
+    icon: FiUser
   },
   {
-    title: "Premium Materials",
-    description: "From German soft-close fittings to FSC-certified solid oak, we select raw materials that age beautifully and release zero harmful toxins.",
-    icon: FiLayers
+    title: "Precision in Every Detail",
+    description: "German soft-close hardware and automated, laser-guided manufacturing ensure millimeter-level accuracy and flawless timber joints in every installation.",
+    icon: FiTarget
   },
   {
-    title: "Reliable Execution",
-    description: "80% of our woodwork is pre-fabricated in our modern, automated plant, ensuring millimeter-level precision and flawless installation.",
-    icon: FiTrendingUp
+    title: "Transparent Proposals",
+    description: "Receive a detailed, fully itemized commercial sheet with brand codes, sizes, and raw material audits. Zero hidden margins, zero cost overruns.",
+    icon: FiFileText
   },
   {
-    title: "Transparent Pricing",
-    description: "Receive a detailed, fully itemized commercial cost sheet. No margins on accessories, no hidden markup, and zero cost overruns.",
-    icon: FiDollarSign
-  },
-  {
-    title: "Dedicated Team",
-    description: "Your home is curated by an integrated unit comprising a Senior Designer, a dedicated Site Engineer, and a hands-on Project Manager.",
+    title: "One Team, Complete Responsibility",
+    description: "From the first line drawn to final key handover, your home is managed by an integrated unit comprising a Senior Designer, Site Engineer, and Project Manager.",
     icon: FiUsers
   },
   {
-    title: "Timely Handover",
-    description: "We back our timelines with commercial penalties. A complete 45 to 60-day roadmap managed with absolute logistical transparency.",
-    icon: FiClock
+    title: "Built for Lasting Value",
+    description: "Meticulously treated sustainable marine-grade plywood and premium wood selections designed to stand the test of time, backed by our 10-year warranty program.",
+    icon: FiShield
+  },
+  {
+    title: "Support Beyond Handover",
+    description: "Our dedication doesn't end when we hand over the keys. Enjoy swift, dedicated customer assistance and regular post-handover check-ups to keep your home pristine.",
+    icon: FiHeart
   }
 ];
 
@@ -65,7 +65,7 @@ export const WhyChooseUs: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="font-inter text-xs tracking-widest uppercase font-semibold text-woodify-burgundy mb-3"
           >
-            The Woodify Guarantee
+            The Woodify standard
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -74,7 +74,7 @@ export const WhyChooseUs: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-woodify-text leading-tight"
           >
-            Crafting Homes with Quiet Intentionality
+            More Than Beautiful Interiors
           </motion.h2>
         </div>
 
@@ -121,3 +121,4 @@ export const WhyChooseUs: React.FC = () => {
 };
 
 export default WhyChooseUs;
+

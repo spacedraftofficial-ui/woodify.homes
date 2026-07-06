@@ -1,26 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import { useNavigate, useLocation } from 'react-router-dom';
 import logoDark from '../../assets/logo_dark.png';
 import logoLight from '../../assets/logo_light.png';
+import { openLeadModal } from '../ui/LeadModal';
+import { trackEvent } from '../../utils/tracking';
 
 interface NavLink {
   label: string;
   href: string;
+  type: 'scroll' | 'route';
 }
 
 const navLinks: NavLink[] = [
-  { label: 'About', href: '#about' },
-  { label: 'Packages', href: '#packages' },
-  { label: 'Process', href: '#process' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '#home', type: 'scroll' },
+  { label: 'About', href: '#about', type: 'scroll' },
+  { label: 'Interiors', href: '#villa-interior', type: 'scroll' },
+  { label: 'Packages', href: '#packages', type: 'scroll' },
+  { label: 'Projects', href: '#portfolio', type: 'scroll' },
+  { label: 'How It Works', href: '#process', type: 'scroll' },
+  { label: 'Contact', href: '#contact', type: 'scroll' },
 ];
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,12 +38,43 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLinkClick = (href: string) => {
-    setIsMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  // Handle post-navigation scrolling (especially when coming from another page)
+  useEffect(() => {
+    if (location.pathname === '/' && location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        // Delay slightly to let the page render
+        const timer = setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+        return () => clearTimeout(timer);
+      }
     }
+  }, [location]);
+
+  const handleLinkClick = (link: NavLink) => {
+    setIsMobileMenuOpen(false);
+    trackEvent('nav_link_click', { label: link.label, href: link.href });
+
+    if (link.type === 'scroll') {
+      if (location.pathname === '/') {
+        const element = document.querySelector(link.href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // Go home, then scroll will be handled by the useEffect above
+        navigate('/' + link.href);
+      }
+    } else {
+      navigate(link.href);
+    }
+  };
+
+  const handleBookConsultation = () => {
+    setIsMobileMenuOpen(false);
+    trackEvent('cta_click', { placement: 'navbar', label: 'Book a Free Consultation' });
+    openLeadModal('Navbar CTA');
   };
 
   return (
@@ -55,7 +93,7 @@ export const Navbar: React.FC = () => {
             className="flex items-center gap-2 group"
             onClick={(e) => {
               e.preventDefault();
-              handleLinkClick('#home');
+              handleLinkClick({ label: 'Home', href: '#home', type: 'scroll' });
             }}
           >
             <img
@@ -69,12 +107,12 @@ export const Navbar: React.FC = () => {
           <nav className="hidden lg:flex items-center gap-8">
             <ul className="flex items-center gap-6">
               {navLinks.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <a
                     href={link.href}
                     onClick={(e) => {
                       e.preventDefault();
-                      handleLinkClick(link.href);
+                      handleLinkClick(link);
                     }}
                     className={`font-inter text-xs tracking-widest uppercase font-semibold transition-colors duration-300 relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:transition-all after:duration-300 hover:after:w-full ${
                       isScrolled
@@ -87,20 +125,16 @@ export const Navbar: React.FC = () => {
                 </li>
               ))}
             </ul>
-            <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                handleLinkClick('#contact');
-              }}
+            <button
+              onClick={handleBookConsultation}
               className={`font-inter text-xs tracking-widest uppercase font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg ${
                 isScrolled
                   ? 'bg-woodify-text text-white hover:bg-woodify-burgundy'
                   : 'bg-white text-woodify-text hover:bg-woodify-burgundy hover:text-white'
               }`}
             >
-              Book Consult
-            </a>
+              Book a Free Consultation
+            </button>
           </nav>
 
           {/* Mobile Navigation Toggle */}
@@ -156,11 +190,11 @@ export const Navbar: React.FC = () => {
                 <nav className="flex flex-col gap-6">
                   {navLinks.map((link) => (
                     <a
-                      key={link.href}
+                      key={link.label}
                       href={link.href}
                       onClick={(e) => {
                         e.preventDefault();
-                        handleLinkClick(link.href);
+                        handleLinkClick(link);
                       }}
                       className="font-inter text-sm tracking-widest uppercase font-semibold text-woodify-text/80 hover:text-woodify-burgundy transition-colors py-2 border-b border-woodify-text/5 block"
                     >
@@ -171,16 +205,12 @@ export const Navbar: React.FC = () => {
               </div>
 
               <div>
-                <a
-                  href="#contact"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleLinkClick('#contact');
-                  }}
+                <button
+                  onClick={handleBookConsultation}
                   className="w-full text-center block bg-woodify-text hover:bg-woodify-burgundy text-white font-inter text-xs tracking-widest uppercase font-bold px-6 py-4 rounded-full transition-all duration-300"
                 >
-                  Book Consultation
-                </a>
+                  Book a Free Consultation
+                </button>
                 <p className="text-[10px] text-center text-woodify-text/40 mt-6 font-inter tracking-widest uppercase">
                   © {new Date().getFullYear()} Woodify Homes
                 </p>
@@ -194,3 +224,4 @@ export const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+

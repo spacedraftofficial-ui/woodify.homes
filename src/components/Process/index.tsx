@@ -58,7 +58,7 @@ export const OurProcess: React.FC = () => {
             viewport={{ once: true }}
             className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-woodify-text leading-tight"
           >
-            A Seamless Design Roadmap
+            Your Journey Home
           </motion.h2>
         </div>
 

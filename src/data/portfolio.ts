@@ -65,6 +65,21 @@ export interface Project {
   image: string;
   category: 'Living Room' | 'Bedroom' | 'Kitchen' | 'Dining' | 'Wardrobe' | 'Home Office' | 'Villa';
   additionalImages?: string[];
+  
+  // V2.0 Card & Case Study Details
+  propertyType?: string;
+  bhk?: string;
+  clientRequirement?: string;
+  designChallenge?: string;
+  woodifySolution?: string;
+  materialsUsed?: string[];
+  beforeAfter?: { before: string; after: string; label: string }[];
+  testimonial?: {
+    name: string;
+    role: string;
+    quote: string;
+    image: string;
+  };
 }
 
 export const portfolioData: Project[] = [
@@ -79,7 +94,23 @@ export const portfolioData: Project[] = [
     description: "A harmonious blend of Scandinavian functionality and Japanese rustic minimalism. Featuring clean lines, warm oak paneling, and an abundance of natural light.",
     image: L1,
     category: "Living Room",
-    additionalImages: [L2, L3, L4, L5, L6]
+    additionalImages: [L2, L3, L4, L5, L6],
+    propertyType: "3 BHK Apartment",
+    bhk: "3 BHK",
+    clientRequirement: "The clients, a young couple, requested a clutter-free, tranquil sanctuary that maximized natural light. They wanted a spatial layout that supported both quiet reading and intimate family gatherings, integrating timber warmth with neutral backdrops.",
+    designChallenge: "The main living area suffered from uneven light penetration and awkward column protrusions. Combining the dining and lounge space into an integrated open layout while maintaining distinct zoning was the key challenge.",
+    woodifySolution: "We created a continuous slatted oak wall system that conceals structural columns and conceals wiring. Low-profile Scandinavian lounge furniture was paired with custom shoji-inspired screens to direct soft light throughout the layout.",
+    materialsUsed: ["FSC-Certified White Oak", "Travertine Stone", "Raw Linen", "Organic Clay Plaster", "German Soft-Close Fittings"],
+    beforeAfter: [
+      { before: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80", after: L1, label: "Living Room Main View" },
+      { before: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80", after: L2, label: "Reading Nook" }
+    ],
+    testimonial: {
+      name: "Vikram & Neha Sen",
+      role: "Homeowners, The Nordic Oasis",
+      quote: "Woodify transformed our empty apartment into a sanctuary of light and warmth. The blending of oak slats with clean plaster walls exceeds what we imagined. Their attention to minor joint alignments is spectacular.",
+      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80"
+    }
   },
   {
     id: "terracotta-lounge",
@@ -523,7 +554,23 @@ export const portfolioData: Project[] = [
     description: "An architectural marvel constructed of glass, steel, and premium white marble. Designed to bring the surrounding lush greenery indoors while maintaining absolute privacy.",
     image: V1,
     category: "Villa",
-    additionalImages: [V2, V3, V4, V5, V6]
+    additionalImages: [V2, V3, V4, V5, V6],
+    propertyType: "Luxury Villa",
+    bhk: "Villa",
+    clientRequirement: "The client requested an architectural masterpiece constructed of glass and raw textures, creating a seamless connection with the outdoor forest. They sought bespoke modular millwork that emphasized scale, floating elements, and clean structural integrity.",
+    designChallenge: "With massive 18-foot floor-to-ceiling glass panel facades, structural wall space for custom carpentry was highly limited. Finding ways to anchor premium suspended wood layouts without disrupting the sightlines or light flow was a critical challenge.",
+    woodifySolution: "We designed and engineered floating steel-reinforced walnut storage units that double as architectural room dividers. These units were integrated with internal wiring and custom LED channels, framing the space with clean lines.",
+    materialsUsed: ["Smoked Walnut Veneer", "Italian Travertine Marble", "Anodized Black Aluminum", "Low-Iron Architectural Glass", "Soft-Close Cabinet Systems"],
+    beforeAfter: [
+      { before: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80", after: V1, label: "Villa Main Atrium" },
+      { before: "https://images.unsplash.com/photo-1502005229762-fc1b2b812ca5?auto=format&fit=crop&w=600&q=80", after: V2, label: "Master Lounge Divider" }
+    ],
+    testimonial: {
+      name: "Ananya Reddy",
+      role: "Architectural Collector, Vitreous House",
+      quote: "Working with Woodify felt like collaborating with an editorial design studio. They understood the delicate requirements of glass structural framing and delivered timber textures that soften our modernist space beautifully.",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&h=150&q=80"
+    }
   },
   {
     id: "concrete-monolith",

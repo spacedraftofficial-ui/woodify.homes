@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPinterestP } from 'react-icons/fa';
+import { useNavigate, useLocation } from 'react-router-dom';
 import logoLight from '../../assets/logo_light.png';
 
 export const Footer: React.FC = () => {
   const [emailSubscribed, setEmailSubscribed] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -12,9 +15,13 @@ export const Footer: React.FC = () => {
   };
 
   const handleLinkClick = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (location.pathname === '/') {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/' + href);
     }
   };
 
@@ -30,7 +37,7 @@ export const Footer: React.FC = () => {
             <img
               src={logoLight}
               alt="Woodify Homes Logo"
-              className="h-10 w-auto object-contain animate-fade-in"
+              className="h-16 w-auto object-contain animate-fade-in"
             />
             <p className="font-inter text-xs text-white/60 leading-relaxed font-light max-w-sm">
               An award-winning architecture and residential interior design studio crafting custom Scandinavian-Japanese (Japandi) spaces that embody structural honesty, sensory warmth, and temporal grace.

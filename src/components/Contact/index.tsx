@@ -14,20 +14,49 @@ interface FormInputs {
 
 export const Contact: React.FC = () => {
   const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormInputs>();
 
-  const onSubmit: SubmitHandler<FormInputs> = (data) => {
-    // In a production app, this would POST to an email delivery endpoint
-    // Because this is a static build, we show a premium success animation.
-    console.log("Contact form submitted data:", data);
-    setIsSubmitSuccessful(true);
-    reset();
-    setTimeout(() => setIsSubmitSuccessful(false), 5000);
+  const onSubmit: SubmitHandler<FormInputs> = async (data) => {
+    setIsSubmitting(true);
+    setSubmitError(null);
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: "c95de895-4b07-412e-8681-27429c981a34",
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          subject: `New Lead: ${data.name} - ${data.subject}`,
+          message: data.message,
+          from_name: "Woodify Homes Website"
+        })
+      });
+      const result = await response.json();
+      if (result.success) {
+        setIsSubmitSuccessful(true);
+        reset();
+        setTimeout(() => setIsSubmitSuccessful(false), 6000);
+      } else {
+        setSubmitError(result.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
+      setSubmitError("Failed to connect to the mail server. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleWhatsAppChat = () => {
     const message = encodeURIComponent("Hello Woodify Homes. I would like to book a free consultation for my residence.");
-    window.open(`https://wa.me/919042863983?text=${message}`, '_blank');
+    window.open(`https://wa.me/917305778404?text=${message}`, '_blank');
   };
 
   return (
@@ -270,10 +299,17 @@ export const Contact: React.FC = () => {
               {/* CTA Submission Button */}
               <button
                 type="submit"
-                className="w-full bg-woodify-text hover:bg-luxury-gradient text-white font-inter text-xs tracking-widest uppercase font-semibold py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
+                disabled={isSubmitting}
+                className="w-full bg-woodify-text hover:bg-luxury-gradient text-white font-inter text-xs tracking-widest uppercase font-semibold py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Request Details
+                {isSubmitting ? 'Sending Request...' : 'Send Request Details'}
               </button>
+
+              {submitError && (
+                <p className="text-[11px] text-center text-red-500 font-inter font-medium mt-3">
+                  ⚠️ {submitError}
+                </p>
+              )}
 
               <p className="text-[10px] text-center text-woodify-text/40 font-light mt-4 leading-relaxed">
                 By submitting this request, you agree to receive follow-up contact details regarding layout estimations.
